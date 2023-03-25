@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.roomviewmodelapp002.R
 import com.example.roomviewmodelapp002.data.User
@@ -35,6 +36,8 @@ class ListAdapter: RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
         rowLayout.setOnClickListener {
             // переключение на фрагент UpdateFragment
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentUser)
+            holder.itemView.findNavController().navigate(action)
         }
 
     }
