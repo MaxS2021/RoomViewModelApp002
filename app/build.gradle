@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -39,6 +41,8 @@ android {
 
 dependencies {
 
+    implementation fileTree(dir: "libs", includes: ["*.jar"])
+
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.8.0'
@@ -58,5 +62,8 @@ dependencies {
 
     // Lifecycle Component
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+
+    // Kotlin component
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20'
 
 }
